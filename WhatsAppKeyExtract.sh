@@ -9,10 +9,11 @@
 ## Version: v2.1 (15th Jul 2014)                                         #
 ##########################################################################
 d="`mktemp -d`"
+adbc=`pwd`"/bin/adb"
 (
   cd "$d"
-  [ -f whatsapp.ab ] || adb backup -f whatsapp.ab -noapk com.whatsapp
+  [ -f whatsapp.ab ] || $adbc backup -f whatsapp.ab -noapk com.whatsapp
   dd if=whatsapp.ab bs=1 skip=24 | python -c "import zlib,sys;sys.stdout.write(zlib.decompress(sys.stdin.read()))" | tar x
-  adb push apps/com.whatsapp/f/key /sdcard/WhatsApp/Databases/.nomedia
+  $adbc push apps/com.whatsapp/f/key /sdcard/WhatsApp/Databases/.nomedia
 )
 rm -r "$d"

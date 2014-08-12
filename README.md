@@ -2,6 +2,9 @@
 
 https://github.com/AbinashBishoyi/WhatsApp-Key-DB-Extractor/archive/master.zip
 
+# MOD by Fabio Natalucci
+Adding adb command into bin folder and modify script nix version. Ready out-of-the-box.
+
 # WhatsApp Key/DB Extractor v2
 
 The purpose of this script is to provide a method for WhatsApp users to extract their cipher key on NON-ROOTED
